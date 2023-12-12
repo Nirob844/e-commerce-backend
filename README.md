@@ -68,6 +68,4 @@ yarn add @prisma/client
 
 This command installs the Prisma Client, which provides an interface to interact with your database.
 
-That's it! You have successfully set up the University Management Core Service Starter project. You can now start exploring and working with the codebase. Refer to the project documentation or README for further instructions on how to run and use the core service.
-
 Happy coding!

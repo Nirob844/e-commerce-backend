@@ -24,8 +24,8 @@ model User {
 }
 
 enum UserType {
-  BUYER
-  SELLER
+  buyers
+  sellers
 }
 
 model Catalog {
