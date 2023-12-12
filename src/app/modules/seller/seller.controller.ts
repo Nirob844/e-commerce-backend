@@ -15,16 +15,6 @@ const createCatalog = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const createProduct = catchAsync(async (req: Request, res: Response) => {
-  const result = await SellerService.createProduct(req.body);
-  sendResponse<Product>(res, {
-    success: true,
-    statusCode: httpStatus.CREATED,
-    message: 'Product Created!',
-    data: result,
-  });
-});
-
 const getAllCatalogs = catchAsync(async (req: Request, res: Response) => {
   const result = await SellerService.getAllCatalogs();
   sendResponse(res, {
@@ -67,11 +57,32 @@ const deleteCatalog = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const createProduct = catchAsync(async (req: Request, res: Response) => {
+  const result = await SellerService.createProduct(req.body);
+  sendResponse<Product>(res, {
+    success: true,
+    statusCode: httpStatus.CREATED,
+    message: 'Product Created!',
+    data: result,
+  });
+});
+
+const getAllProduct = catchAsync(async (req: Request, res: Response) => {
+  const result = await SellerService.getAllProducts();
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Product fetched!',
+    data: result,
+  });
+});
+
 export const SellerController = {
   createCatalog,
-  createProduct,
   getAllCatalogs,
   getCatalogById,
   updateCatalog,
   deleteCatalog,
+  createProduct,
+  getAllProduct,
 };

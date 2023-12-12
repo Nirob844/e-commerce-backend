@@ -22,14 +22,6 @@ const createCatalog = async (data: Catalog): Promise<Catalog> => {
   return result;
 };
 
-const createProduct = async (data: Product): Promise<Product> => {
-  const result = await prisma.product.create({
-    data,
-  });
-
-  return result;
-};
-
 const getAllCatalogs = async (): Promise<Catalog[]> => {
   const result = await prisma.catalog.findMany({
     include: {
@@ -76,6 +68,24 @@ const deleteCatalog = async (id: string): Promise<Catalog> => {
   return result;
 };
 
+const createProduct = async (data: Product): Promise<Product> => {
+  const result = await prisma.product.create({
+    data,
+  });
+
+  return result;
+};
+
+const getAllProducts = async (): Promise<Product[]> => {
+  const result = await prisma.product.findMany({
+    include: {
+      catalog: true,
+      order: true,
+    },
+  });
+  return result;
+};
+
 export const SellerService = {
   createCatalog,
   getAllCatalogs,
@@ -83,4 +93,5 @@ export const SellerService = {
   updateCatalog,
   deleteCatalog,
   createProduct,
+  getAllProducts,
 };
