@@ -14,6 +14,11 @@
             "date": 1702360997158,
             "name": "C:\\project\\level-2\\e-commerce-backend\\logs\\winston\\errors\\backend-2023-12-12-12-error.log",
             "hash": "ced0fe470eb65f2ad64717344dbd744901cc4266d39c2ecd68994c1d4c30a1b0"
+        },
+        {
+            "date": 1702372217991,
+            "name": "C:\\project\\level-2\\e-commerce-backend\\logs\\winston\\errors\\backend-2023-12-12-15-error.log",
+            "hash": "2ffcb5065dcd4b3bdaffa3b1eddde26abff79a17a79f3e5748f48a707f7dbb73"
         }
     ],
     "hashType": "sha256"
