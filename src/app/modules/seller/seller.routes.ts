@@ -4,6 +4,7 @@ import { SellerController } from './seller.controller';
 const router = express.Router();
 
 router.post('/create-catalog', SellerController.createCatalog);
+router.post('/create-product', SellerController.createProduct);
 router.get('/', SellerController.getAllCatalogs);
 router.get('/:id', SellerController.getCatalogById);
 router.patch('/:id', SellerController.updateCatalog);

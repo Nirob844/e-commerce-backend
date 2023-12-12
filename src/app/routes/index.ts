@@ -1,5 +1,6 @@
 import express from 'express';
 import { AuthRoutes } from '../modules/auth/auth.routes';
+import { BuyerRoutes } from '../modules/buyer/buyer.routes';
 import { SellerRoutes } from '../modules/seller/seller.routes';
 import { UserRoutes } from '../modules/user/user.routes';
 
@@ -18,6 +19,10 @@ const moduleRoutes = [
   {
     path: '/seller',
     route: SellerRoutes,
+  },
+  {
+    path: '/buyer',
+    route: BuyerRoutes,
   },
 ];
 

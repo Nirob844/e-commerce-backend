@@ -19,6 +19,16 @@
             "date": 1702372217991,
             "name": "C:\\project\\level-2\\e-commerce-backend\\logs\\winston\\errors\\backend-2023-12-12-15-error.log",
             "hash": "2ffcb5065dcd4b3bdaffa3b1eddde26abff79a17a79f3e5748f48a707f7dbb73"
+        },
+        {
+            "date": 1702376047897,
+            "name": "C:\\project\\level-2\\e-commerce-backend\\logs\\winston\\errors\\backend-2023-12-12-16-error.log",
+            "hash": "66ec161d9082dc677dbd092a994d35f4e750ac077647d693238f07418b2a2ff7"
+        },
+        {
+            "date": 1702383505487,
+            "name": "C:\\project\\level-2\\e-commerce-backend\\logs\\winston\\errors\\backend-2023-12-12-18-error.log",
+            "hash": "7161da9788fe17be00ef1c7c0e3e823fd6dc37a2eedbfd8d1bd077c2bc9cd346"
         }
     ],
     "hashType": "sha256"

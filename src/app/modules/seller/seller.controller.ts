@@ -1,4 +1,4 @@
-import { Catalog } from '@prisma/client';
+import { Catalog, Product } from '@prisma/client';
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
@@ -11,6 +11,16 @@ const createCatalog = catchAsync(async (req: Request, res: Response) => {
     success: true,
     statusCode: httpStatus.CREATED,
     message: 'Catalog Created!',
+    data: result,
+  });
+});
+
+const createProduct = catchAsync(async (req: Request, res: Response) => {
+  const result = await SellerService.createProduct(req.body);
+  sendResponse<Product>(res, {
+    success: true,
+    statusCode: httpStatus.CREATED,
+    message: 'Product Created!',
     data: result,
   });
 });
@@ -59,6 +69,7 @@ const deleteCatalog = catchAsync(async (req: Request, res: Response) => {
 
 export const SellerController = {
   createCatalog,
+  createProduct,
   getAllCatalogs,
   getCatalogById,
   updateCatalog,
