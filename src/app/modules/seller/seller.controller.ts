@@ -15,6 +15,52 @@ const createCatalog = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getAllCatalogs = catchAsync(async (req: Request, res: Response) => {
+  const result = await SellerService.getAllCatalogs();
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Catalogs fetched!',
+    data: result,
+  });
+});
+
+const getCatalogById = catchAsync(async (req: Request, res: Response) => {
+  const result = await SellerService.getCatalogById(req.params.id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Catalog data fetched!',
+    data: result,
+  });
+});
+
+const updateCatalog = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const result = await SellerService.updateCatalog(id, req.body);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Catalog updated successfully',
+    data: result,
+  });
+});
+
+const deleteCatalog = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const result = await SellerService.deleteCatalog(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Catalog deleted successfully',
+    data: result,
+  });
+});
+
 export const SellerController = {
   createCatalog,
+  getAllCatalogs,
+  getCatalogById,
+  updateCatalog,
+  deleteCatalog,
 };
