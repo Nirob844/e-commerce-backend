@@ -22,50 +22,21 @@ cd e-commerce-backend
 yarn install
 ```
 
-4. Configure Prisma and the database connection:
 
-- Add Prisma as a development dependency by running the following command:
-
-```bash
-yarn add prisma --save-dev
-```
-
-- Set up your Prisma project by creating the Prisma schema file using the following command:
-
-```bash
-npx prisma init
-```
-
-- Open the prisma/schema.prisma file and configure your database connection details.
-
-```bash
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-```
 
 - Create a .env file in the project root directory and set the DATABASE_URL environment variable. Replace the placeholders with your database connection details:
 
 ```bash
 DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=SCHEMA"
 ```
-
-5. Creating the database schema
-6. Migrate the database schema: Use the following command to create and apply the initial database schema:
+- .env
 
 ```bash
-npx prisma migrate dev --name init
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=SCHEMA"
+NODE_ENV=development
+PORT=5000
+JWT_SECRET='very-secret'
+JWT_EXPIRES_IN=3d
+JWT_REFRESH_SECRET='very-refresh-secret'    
+JWT_REFRESH_EXPIRES_IN=365d
 ```
-
-This command creates a new migration file based on your schema changes and applies it to your database.
-
-6. `Install Prisma Client:` Install the Prisma Client library by running the following command:
-
-```bash
-yarn add @prisma/client
-```
-
-This command installs the Prisma Client, which provides an interface to interact with your database.
-
-Happy coding!
