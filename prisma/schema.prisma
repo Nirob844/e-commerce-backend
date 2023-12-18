@@ -40,22 +40,35 @@ model Catalog {
 }
 
 model Product {
-  id        String   @id @default(uuid())
-  name      String
-  price     Float
-  catalog   Catalog  @relation(fields: [catalogId], references: [id])
-  catalogId String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  order     Order?   @relation(fields: [orderId], references: [id])
-  orderId   String?
+  id              String            @id @default(uuid())
+  name            String
+  price           Float
+  catalog         Catalog           @relation(fields: [catalogId], references: [id])
+  catalogId       String
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  order           Order?            @relation(fields: [orderId], references: [id])
+  orderId         String?
+  OrderedProducts OrderedProducts[]
 }
 
 model Order {
-  id        String    @id @default(uuid())
-  buyer     User      @relation(fields: [buyerId], references: [id])
-  buyerId   String
-  products  Product[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id              String            @id @default(uuid())
+  buyer           User              @relation(fields: [buyerId], references: [id])
+  buyerId         String
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  products        Product[]
+  orderedProducts OrderedProducts[]
+}
+
+model OrderedProducts {
+  id        String   @id @default(uuid())
+  orderId   String
+  productId String
+  quantity  Int // Define quantity as a required number
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  order     Order    @relation(fields: [orderId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
 }

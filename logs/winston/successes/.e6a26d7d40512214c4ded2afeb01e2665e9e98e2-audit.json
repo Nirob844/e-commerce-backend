@@ -34,6 +34,11 @@
             "date": 1702386235374,
             "name": "C:\\project\\level-2\\e-commerce-backend\\logs\\winston\\successes\\backend-2023-12-12-19-success.log",
             "hash": "737a8759fc907e0d95b09749a8bc1a5f661536ed0374c3f6e981a4777291c5dc"
+        },
+        {
+            "date": 1702904986691,
+            "name": "C:\\project\\level-2\\e-commerce-backend\\logs\\winston\\successes\\backend-2023-18-12-19-success.log",
+            "hash": "8c05ccabf106bf2fa37bd1d5673701fd6d3e975b4dedc8226deff6d6aca5f0eb"
         }
     ],
     "hashType": "sha256"
